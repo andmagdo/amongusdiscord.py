@@ -1,4 +1,6 @@
+
 import discord
+from sys import exit
 import random
 import string
 
@@ -11,15 +13,17 @@ result = 0
 roomCode = 'Undefined'
 # Define client
 client = discord.Client()
-botToken = "Insert Bot Token Here"
+botToken = "{Bottoken}"
 
 
-# Define port (8123 is default)
+# Define port (8123 is default) (does nothing currently)
 port = 8123
 
 
 # description
 description = 'An attempt to replicate the behaviors made by AutoMuteUs.'
+
+#Graceful ctrl c
 
 
 def startBot():
@@ -66,7 +70,9 @@ async def on_message(message):
         elif lowerMessage == '.au' + ' new' or lowerMessage == '.au' + ' n':
             global roomCode
             await message.channel.send('This command is not finished yet! Please refer to `.au help` for a list of finished and unfinished commands')
-            await message.author.send("Your message goes here")
+            embedVar = discord.Embed(title="**You just started a game!**", description="Copy/paste the following link to link your capture:\n  localhost:8123", color=0x00ff00)
+            embedVar.add_field(name="Code", value=getRandomString(8), inline=False)
+            await message.author.send(embed=embedVar)
             embed = discord.Embed(title="Lobby is Open!",
                                   description="❌ No capture linked! Click the link in your DMs to connect!❌ `" + getRandomString(6),
                                   color=0x00ff40)
@@ -124,6 +130,5 @@ def AuEnd():
     auNew = False
     print('Command failed, not implemented yet')
     return auNew
-
 
 client.run(botToken)
