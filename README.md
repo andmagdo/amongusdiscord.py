@@ -33,7 +33,7 @@ Make sure both Python3 and pip3 is installed (Type python3 into a terminal to fi
 Linux should have it already installed, but if not (somehow), use your distro's package manager to install python3 and python3-pip
 Incase that pip isn't installed, do python3 get-pip.py
 Once you have pip installed, do pip3 install --upgrade pip
-## If this doesnt work on Windows, replace pip below with `py -3 -m pip install -U {package}`
+### If this doesnt work on Windows, replace pip below with `py -3 -m pip install -U {package}`
 
 ## Installing dependencies
 Run the following commands:
