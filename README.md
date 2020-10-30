@@ -1,3 +1,4 @@
+# Get the official working version at [AutoMuteUs](https://github.com/denverquane/automuteus)
 # AmongUsAutoMute.py (Pre-Alpha) 
 
 Discord Bot to harness Among Us game data, and automatically mute/unmute players during the course of the game!
